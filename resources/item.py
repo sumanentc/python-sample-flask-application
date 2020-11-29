@@ -1,10 +1,8 @@
 from flask import request
-from flask_restplus import Resource, fields,Namespace
-from marshmallow import ValidationError
+from flask_restplus import Resource, fields, Namespace
 
 from models.item import ItemModel
 from schemas.item import ItemSchema
-
 
 ITEM_NOT_FOUND = "Item not found."
 
@@ -41,7 +39,7 @@ class Item(Resource):
     @item_ns.expect(item)
     def put(self, id):
         item_data = ItemModel.find_by_id(id)
-        item_json = request.get_json();
+        item_json = request.get_json()
 
         if item_data:
             item_data.price = item_json['price']

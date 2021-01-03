@@ -30,9 +30,9 @@ The server will start at <http://localhost:5000>.
 It also contain the DockerFile . In case we need to deploy it with Docker.
 ```
 
-docker build -t python-smaple-flask .
+docker build -t sumand/python-sample-flask .
 
-docker run -d -p 5000:5000 python-smaple-flask:latest
+docker run -d -p 5000:5000 sumand/python-sample-flask:latest
 
 ```
 
